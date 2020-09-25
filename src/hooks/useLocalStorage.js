@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
 export default function storage(key, initialValue) {
-  const [todos, setTodos] = useState(getFromStroage);
+  const [todos, setTodos] = useState(getFromStorage);
 
-  function getFromStroage() {
+  function getFromStorage() {
     return JSON.parse(localStorage.getItem(key)) || initialValue;
   }
 
@@ -13,7 +13,7 @@ export default function storage(key, initialValue) {
   }
 
   function updateFromStorage() {
-    setTodos(getFromStroage());
+    setTodos(getFromStorage());
   }
 
   useEffect(() => {
